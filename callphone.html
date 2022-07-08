@@ -88,7 +88,21 @@
 
 </head>
 
+<script>
+<!-- 这段js代码是用来判断是展示网页图片还是打开APP,
+window.navigator.standalone 是用来判断网页是否是全屏展示，
+如果是全屏展示，那么就是点击快捷方式打开的，直接执行打开APP的操作即可，
+如果不是全屏展示，那么就是通过URL在浏览器中打开的，直接展示网页即可-->
+if (window.navigator.standalone == true) {
+    var lnk = document.getElementById("callphone").click();
+}
+</script>
+
 <body>
+
+<!-- href后的链接是APP对外开放的scheme，只有scheme与APP中设置的一致，才能打开APP，
+而scheme后面的值可以作为打开APP后的特殊操作，如果仅仅是打开，后面随便写就行，APP中不进行处理即可 -->
+<a href="shortcut://callphone" id="callphone" style="display:none"></a> 
 
 <div class="main">
 
