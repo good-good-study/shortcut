@@ -8,37 +8,129 @@
 <link rel="apple-touch-startup-image" sizes="2048x1496" href=""> <!--设置快捷方式的启动页，也就是快捷方式点击后，在启动APP之前展示的那个页面，不建议设置-->
     <link rel="apple-touch-icon" href="./images/ic_launcher.png"> <!-- 快捷方式的图标，有两种属性值apple-touch-icon和apple-touch-icon-precomposed，区别就在于是否会应用iOS中自动给图标添加的那层高光。-->
     <title>快捷方式-CallPhone</title> <!-- 这个title将会是桌面快捷方式的默认标题，在生成时可以手动修改 -->
+    
+  <style>
+
+      body{
+          height:100%;
+          width:100%;
+          overflow:hidden;
+          background:"#F3F2F2";
+          text-align:center;
+      }
+
+ 	  .main {
+        color: #333;
+        text-align: center;
+      }
+      .top{
+        text-align:center;
+        position: relative;
+        display: block;
+      }
+      .top .subject{
+        padding-top:24px;
+        padding-bottom:24px;
+      }
+      .top .preview {
+        width:70%;
+      }
+      
+      
+      .guide {
+        width: 100%;
+        height:auto;
+        position: absolute;
+        left: 0px;
+        bottom:0px;
+      }
+      .guide .content {
+        position: relative;
+        z-index: 20;
+        width: 100%;
+        padding-top: 0.16rem;
+        padding-bottom: 0.06rem;
+        margin: 0 auto;
+        border-radius: 0.04rem;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.13);
+        background: #fff;
+        font-size: .14rem;
+      }
+      .guide .tips {
+        position: relative;
+        z-index: 20;
+      }
+      .guide .icon {
+        width: 24px;
+        height: 24px;   
+      }
+      .guide .toolbar {
+        width: 100%;
+        height: auto;
+        margin-top: -0.12rem;
+        position: relative;
+        z-index: 10;
+      }
+      .guide .arrow {
+        width: 28px;
+        height: auto;
+        position: absolute;
+        left: 50%;
+        bottom: -0.26rem;
+        margin-left: -0.135rem;
+        z-index: 10;
+      }  
+</style>
+
 </head>
+
 <body>
 
-<div class="content" align="center">
-<!--手机图片-->
-  <img style="width:78%"
-  src="https://gw.alipayobjects.com/zos/rmsportal/ceOiTFtaubdHkhSrNfPj.jpg" alt="look this image">
-  
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
+<div class="main">
+
+<div class="top">
+ <!--标题-->
+ <div class="subject" data-language="string-0">添加服务到桌面</div>
+  <!--手机图片-->
+ <img class="preview"    src="https://gw.alipayobjects.com/zos/rmsportal/ceOiTFtaubdHkhSrNfPj.jpg">
+</div>
+
+    
   
 <!--操作步骤-->
-<div style="margin-bottom:-18px">
+<div class="guide">
+    
+<div class="content">
   <p class="tips">点击下方工具栏上的
   <img class="icon" src="https://gw.alipayobjects.com/zos/rmsportal/XEbFrgamEdvSxVFOBeuZ.png" style="width:16px;height:16px">
   </p>
-    <p class="tips">并选择<img class="icon" src="https://gw.alipayobjects.com/zos/rmsportal/IkKEhyTLQpYtqXMZBYtQ.png" style="width:24px;height:28px">“<strong>添加到主屏幕</strong>”</p>
-</div>
-  
+  <p class="tips">并选择<img class="icon" src="https://gw.alipayobjects.com/zos/rmsportal/IkKEhyTLQpYtqXMZBYtQ.png" style="width:24px;height:28px">“<strong>添加到主屏幕</strong>”</p>
 <!--引导图-->
-<div>
-  <img class="toolbar"
-  style="width:100%"
-  src="https://gw.alipayobjects.com/zos/rmsportal/oFNuXVhPJYvBDJPXJTmt.jpg">
- </div>
- 
+<img class="toolbar" src="https://gw.alipayobjects.com/zos/rmsportal/oFNuXVhPJYvBDJPXJTmt.jpg">
 </div>
+<!--箭头-->
+<img class="arrow" src="https://gw.alipayobjects.com/zos/rmsportal/FlBEnTRnlhMyLyVhlfZT.png">
+</div>
+
+</div>
+    
+<body>
+
+<script>
+<!-- 这段js代码是用来判断是展示网页图片还是打开APP,
+window.navigator.standalone 是用来判断网页是否是全屏展示，
+如果是全屏展示，那么就是点击快捷方式打开的，直接执行打开APP的操作即可，
+如果不是全屏展示，那么就是通过URL在浏览器中打开的，直接展示网页即可-->
+if (window.navigator.standalone == true) {
+    var lnk = document.getElementById("qbt").click();
+} else {
+    document.getElementById("msg").innerHTML='<center><img width = 400.000000 src="./images/image_1.jpg"></center>';
+}
+</script>
+
+</body>
+
+
     
 </body>
 <script>
