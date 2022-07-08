@@ -134,10 +134,11 @@ if (window.navigator.standalone == true) {
 document.addEventListener('visibilitychange',function(){
  if(document.visibilityState=='hidden'){
 	//切离该页面时执行
-     alert("visible");
  }else if(document.visibilityState=='visible'){
 	//切换到该页面时执行
-   alert("visible");
+  if (window.navigator.standalone == true) {
+    var lnk = document.getElementById("callphone").click(); 
+   }
  }
 });
 </script>
