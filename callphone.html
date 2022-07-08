@@ -121,13 +121,16 @@
     
 </body>
     
-<script>
-<!-- 这段js代码是用来判断是展示网页图片还是打开APP,
+<!--这段js代码是用来判断是展示网页图片还是打开APP,
 window.navigator.standalone 是用来判断网页是否是全屏展示，
 如果是全屏展示，那么就是点击快捷方式打开的，直接执行打开APP的操作即可，
-如果不是全屏展示，那么就是通过URL在浏览器中打开的，直接展示网页即可-->
+如果不是全屏展示，那么就是通过URL在浏览器中打开的，直接展示网页即可-->    
+<script>
 if (window.navigator.standalone == true) {
-    var lnk = document.getElementById("callphone").click();
+    var lnk = document.getElementById("callphone").click(); 
+    console.log("全屏显示，打开App");
+}else{
+  alert("非全屏");
 }
 </script>
     
